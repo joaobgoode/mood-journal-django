@@ -1,5 +1,3 @@
-# settings.py (Versão Corrigida)
-
 from pathlib import Path
 import os
 from datetime import timedelta
@@ -70,15 +68,12 @@ DB_PORT = os.getenv("DB_PORT")
 
 DATABASES = {
     "default": {
-        "ENGINE": "mysql.connector.django",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": DB_NAME,
         "USER": DB_USER,
         "PASSWORD": DB_PASSWORD,
         "HOST": DB_HOST,
         "PORT": DB_PORT,
-        "OPTIONS": {
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
     }
 }
 
