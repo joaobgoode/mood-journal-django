@@ -15,6 +15,9 @@ DEBUG = os.getenv("DEBUG", "True") == "True"
 ALLOWED_HOSTS_str = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1")
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS_str.split(",") if host.strip()]
 
+BACKEND_ADDRESS = os.getenv("BACKEND_ADDRESS", "http://localhost:8000")
+ALLOWED_HOSTS.append(BACKEND_ADDRESS)
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
